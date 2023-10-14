@@ -6,19 +6,17 @@ export const MyForms = ({ user }) => {
   // 3 - gerenciamento de dados
   const [name, setName] = useState(user ? user.name : "");
   const [email, setEmail] = useState(user ? user.email : "");
-  const [bio, setBio] = useState("");
+  const [bio, setBio] = useState(user ? user.bio : "");
+  const [role, setRole] = useState(user ? user.role : "");
 
   const handleName = (e) => {
     setName(e.target.value);
   };
 
-  //   console.log("name", name);
-  //   console.log("email", email);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Enviando o formulário");
-    console.log(name, email, bio);
+    console.log(name, email, bio, role);
 
     // 7 - limpar form
     setName("");
@@ -62,6 +60,19 @@ export const MyForms = ({ user }) => {
             onChange={(e) => setBio(e.target.value)}
             value={bio}
           ></textarea>
+        </label>
+        {/* 9 - select */}
+        <label>
+          <span>função no sistema</span>
+          <select
+            name="role"
+            onChange={(e) => setRole(e.target.value)}
+            value={role}
+          >
+            <option value="user">Usuário</option>
+            <option value="editor">Editor</option>
+            <option value="admin">Administrador</option>
+          </select>
         </label>
         <input type="submit" value="Enviar" />
       </form>
