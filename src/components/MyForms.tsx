@@ -48,6 +48,7 @@ export const MyForms: React.FC<MyFormsProps> = ({ user }) => {
             placeholder="Digite o seu nome"
             onChange={handleName}
             value={name}
+            required
           />
         </div>
         {/* 2 - label envolveldo input */}
