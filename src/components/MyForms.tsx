@@ -1,7 +1,18 @@
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import "./MyForms.css";
 
-export const MyForms = ({ user }) => {
+interface User {
+  name: string;
+  email: string;
+  bio: string;
+  role: string;
+}
+
+interface MyFormsProps {
+  user: User | null;
+}
+
+export const MyForms: React.FC<MyFormsProps> = ({ user }) => {
   // 6 - controlled inputs
   // 3 - gerenciamento de dados
   const [name, setName] = useState(user ? user.name : "");
@@ -9,11 +20,11 @@ export const MyForms = ({ user }) => {
   const [bio, setBio] = useState(user ? user.bio : "");
   const [role, setRole] = useState(user ? user.role : "");
 
-  const handleName = (e) => {
+  const handleName = (e: ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log("Enviando o formulário");
     console.log(name, email, bio, role);
@@ -47,7 +58,9 @@ export const MyForms = ({ user }) => {
             type="email"
             name="email"
             placeholder="Digite o seu e-mail"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setEmail(e.target.value)
+            }
             value={email}
           />
         </label>
@@ -57,7 +70,9 @@ export const MyForms = ({ user }) => {
           <textarea
             name="bio"
             placeholder="Descrição do usuário"
-            onChange={(e) => setBio(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+              setBio(e.target.value)
+            }
             value={bio}
           ></textarea>
         </label>
@@ -66,7 +81,9 @@ export const MyForms = ({ user }) => {
           <span>função no sistema</span>
           <select
             name="role"
-            onChange={(e) => setRole(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+              setRole(e.target.value)
+            }
             value={role}
           >
             <option value="user">Usuário</option>
