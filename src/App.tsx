@@ -1,7 +1,7 @@
 import "./App.css";
 import { MyForms } from "./components/MyForms";
 
-function App() {
+export function App() {
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>Forms</h2>

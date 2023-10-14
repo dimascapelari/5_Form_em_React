@@ -78,7 +78,7 @@ export const MyForms: React.FC<MyFormsProps> = ({ user }) => {
         </label>
         {/* 9 - select */}
         <label>
-          <span>função no sistema</span>
+          <span>Função no sistema</span>
           <select
             name="role"
             onChange={(e: ChangeEvent<HTMLSelectElement>) =>
