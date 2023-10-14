@@ -1,0 +1,16 @@
+form {
+  width: 500px;
+  margin: 0 auto;
+  /* text-align: center; */
+  border: 1px solid blue;
+  border-radius: 10px;
+  padding: 40px;
+  font-family: Ubuntu;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  margin-top: 10px;
+}
