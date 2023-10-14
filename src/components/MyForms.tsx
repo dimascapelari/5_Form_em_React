@@ -63,6 +63,7 @@ export const MyForms: React.FC<MyFormsProps> = ({ user }) => {
               setEmail(e.target.value)
             }
             value={email}
+            required
           />
         </label>
         {/* 8 - textarea */}
@@ -75,6 +76,7 @@ export const MyForms: React.FC<MyFormsProps> = ({ user }) => {
               setBio(e.target.value)
             }
             value={bio}
+            required
           ></textarea>
         </label>
         {/* 9 - select */}
